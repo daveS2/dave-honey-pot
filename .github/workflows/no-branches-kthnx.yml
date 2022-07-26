@@ -33,6 +33,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
+          git branch -a
           git branch -d ${{ steps.extract_branch.outputs.branch }}
 
       # Runs a set of commands using the runners shell
