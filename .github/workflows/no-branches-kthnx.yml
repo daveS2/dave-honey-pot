@@ -22,6 +22,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        with:
+          ref: main
 
       - name: Extract branch name
         shell: bash
@@ -31,7 +33,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          git checkout main
           git branch -d ${{ steps.extract_branch.outputs.branch }}
 
       # Runs a set of commands using the runners shell
